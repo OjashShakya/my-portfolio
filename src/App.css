@@ -1,0 +1,182 @@
+/* Main Portfolio Container - Flexible Layout */
+.portfolio-container {
+  background-color: #3D3D3D;
+  height: 100vh;
+  width: 100vw;
+  padding: 28px;
+  position: relative;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Container Base Styles */
+.container {
+  background-color: #1C1C1C;
+  border-radius: 28px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+/* Fill div for placeholders */
+.fill-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Container images */
+.container-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Container 1: Bengali Text (Top Left) */
+.name-tag-section {
+  top: 28px;
+  left: 28px;
+  width: 500px;
+  height: 150px;
+}
+
+.name-tag-section .container-image {
+  width: 239px;
+  height: 98px;
+  object-fit: cover;
+  border-radius: 28px;
+}
+
+/* Container 2: Watch (Top Middle) */
+.watch-section {
+  top: 28px;
+  left: 556px; /* 28px + 500px + 28px */
+  right: 556px; /* 28px + 500px + 28px */
+  height: 550px;
+}
+
+/* Container 3: Man by River Image (Top Right) */
+.image-section {
+  top: 28px;
+  right: 28px;
+  width: 500px;
+  height: 350px;
+}
+
+.image-section .container-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+}
+
+/* Container 4: Connect (Middle Left) */
+.connect-section {
+  top: 206px; /* 28px + 150px + 28px */
+  left: 28px;
+  width: 500px;
+  height: 525px;
+}
+
+/* Container 5: Social Media Icons (Bottom Left) */
+.social-section {
+  top: 759px; /* 28px + 150px + 28px + 525px + 28px */
+  left: 28px;
+  width: 500px;
+  height: 133px;
+}
+
+/* Container 6: Projects (Bottom Middle) */
+.projects-section {
+  top: 606px; /* 28px + 550px + 28px */
+  left: 556px; /* 28px + 500px + 28px */
+  right: 556px; /* 28px + 500px + 28px */
+  height: 286px;
+}
+
+/* Container 7: Follow (Bottom Right) */
+.follow-section {
+  top: 406px; /* 28px + 350px + 28px */
+  right: 28px;
+  width: 500px;
+  height: 486px;
+}
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .bengali-text, .image-section, .connect-section, .social-section, .follow-section {
+    width: 400px;
+  }
+  
+  .watch-section, .projects-section {
+    left: 456px; /* 28px + 400px + 28px */
+    right: 456px; /* 28px + 400px + 28px */
+  }
+  
+  .image-section, .follow-section {
+    right: 28px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .bengali-text, .image-section, .connect-section, .social-section, .follow-section {
+    width: 300px;
+  }
+  
+  .watch-section, .projects-section {
+    left: 356px; /* 28px + 300px + 28px */
+    right: 356px; /* 28px + 300px + 28px */
+  }
+  
+  .image-section, .follow-section {
+    right: 28px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bengali-text, .image-section, .connect-section, .social-section, .follow-section {
+    width: 250px;
+  }
+  
+  .watch-section, .projects-section {
+    left: 306px; /* 28px + 250px + 28px */
+    right: 306px; /* 28px + 250px + 28px */
+  }
+  
+  .image-section, .follow-section {
+    right: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-container {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .container {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 120px;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin-bottom: 28px;
+  }
+  
+  .bengali-text .fill-div {
+    font-size: 48px;
+  }
+}
