@@ -1,4 +1,5 @@
 import './App.css'
+import { useLayoutEffect, useRef } from 'react'
 import pictureImage from './images/picture.png'
 import connectImage from './images/connect.png'
 import followImage from './images/follow.png'
@@ -13,6 +14,21 @@ import twitter from './images/twitter.png'
 
 
 function App() {
+  const containerRef = useRef<HTMLDivElement | null>(null)
+
+  useLayoutEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+
+    el.classList.remove('animate-ready')
+    
+    const timeout = setTimeout(() => {
+      el.classList.add('animate-ready')
+    }, 50)
+
+    return () => clearTimeout(timeout)
+  }, [])
+
   const openInNewTab = (url: string) => {
     if (!url) return
     window.open(url, '_blank', 'noopener,noreferrer')
@@ -34,7 +50,7 @@ function App() {
   const connectLink = 'https://www.linkedin.com/in/ojashshakya/'
   const followLink = 'https://www.instagram.com/memoirdeojash'
   return (
-    <div className="portfolio-container">
+    <div ref={containerRef} className="portfolio-container">
       {/* Container 1: Name Tag (Top Left) */}
       <div className="container name-tag-section">
         <img src={nameTag} alt="Ojash Shakya" className="container-image" />
@@ -52,22 +68,14 @@ function App() {
             allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
             allowFullScreen
           ></iframe>
+          <div className="iframe-overlay"></div>
         </div>
       </div>
 
       {/* Container 3: Picture (Top Right) */}
       <div className="container image-section">
         <img src={pictureImage} alt="Ojash Shakya" className="container-image" />
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(28, 28, 28, 0.15)"
-          }}
-  ></div>
+        <div className="image-overlay"></div>
       </div>
 
       {/* Container 4: Connect (Middle Left) */}
