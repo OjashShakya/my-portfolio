@@ -14,7 +14,7 @@
 .container {
   background-color: #1C1C1C;
   border-radius: 28px;
-  color: white;
+  /* color: white; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,8 +30,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  font-weight: 600;
   text-align: center;
 }
 
@@ -43,7 +41,7 @@
   border-radius: 12px;
 }
 
-/* Container 1: Bengali Text (Top Left) */
+/* Container 1: NameTag (Top Left) */
 .name-tag-section {
   top: 28px;
   left: 28px;
@@ -64,9 +62,18 @@
   left: 556px; /* 28px + 500px + 28px */
   right: 556px; /* 28px + 500px + 28px */
   height: 550px;
+  padding: 25px 20px 20px 20px;
 }
 
-/* Container 3: Man by River Image (Top Right) */
+.watch-videos {
+  width: 768px;
+  height: 410px;
+  object-fit: cover;
+  border-radius: 20px;
+  background-color: aliceblue;
+}
+
+/* Container 3: Picture (Top Right) */
 .image-section {
   top: 28px;
   right: 28px;
@@ -91,10 +98,22 @@
 
 /* Container 5: Social Media Icons (Bottom Left) */
 .social-section {
-  top: 759px; /* 28px + 150px + 28px + 525px + 28px */
+  top: 759px; /* 28 + 150(height name) + 28 + 525(height connect) + 28 */
   left: 28px;
   width: 500px;
   height: 133px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-section .container-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 28px;
 }
 
 /* Container 6: Projects (Bottom Middle) */
@@ -102,7 +121,27 @@
   top: 606px; /* 28px + 550px + 28px */
   left: 556px; /* 28px + 500px + 28px */
   right: 556px; /* 28px + 500px + 28px */
+  padding: 25px 20px 20px 20px;
+  width: 808px;
   height: 286px;
+  top: 606px; /* 28 + 550(height watch) + 28 */
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.project-image {
+  width: 242.67px;
+  height: 120.3px;
+  border-radius: 20px;
+}
+
+/* Clickable affordance */
+.clickable {
+  cursor: pointer;
 }
 
 /* Container 7: Follow (Bottom Right) */
@@ -115,7 +154,7 @@
 
 /* Responsive Design */
 @media (max-width: 1600px) {
-  .bengali-text, .image-section, .connect-section, .social-section, .follow-section {
+  .name-tag-section, .image-section, .connect-section, .social-section, .follow-section {
     width: 400px;
   }
   
@@ -130,7 +169,7 @@
 }
 
 @media (max-width: 1200px) {
-  .bengali-text, .image-section, .connect-section, .social-section, .follow-section {
+  .name-tag-section, .image-section, .connect-section, .social-section, .follow-section {
     width: 300px;
   }
   
@@ -145,7 +184,7 @@
 }
 
 @media (max-width: 1024px) {
-  .bengali-text, .image-section, .connect-section, .social-section, .follow-section {
+  .name-tag-section, .image-section, .connect-section, .social-section, .follow-section {
     width: 250px;
   }
   
@@ -176,7 +215,7 @@
     margin-bottom: 28px;
   }
   
-  .bengali-text .fill-div {
+  .name-tag-section .fill-div {
     font-size: 48px;
   }
 }
