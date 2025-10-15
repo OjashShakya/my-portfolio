@@ -19,20 +19,20 @@ function App() {
   }
 
   const projectLinks: Record<string, string> = {
-    weather: 'https://example.com/weather',
-    financefusion: 'https://example.com/financefusion',
-    ojashsdelight: 'https://example.com/ojashs-delights'
+    weather: 'https://ojash-weather.vercel.app',
+    financefusion: 'https://financefusion-six.vercel.app/login',
+    // ojashsdelight: 'https://example.com/ojashs-delights'
   }
 
   const socialLinks: Record<string, string> = {
-    gmail: 'mailto:someone@example.com',
-    github: 'https://github.com/your-username',
-    discord: 'https://discord.com/users/your-id',
-    twitter: 'https://twitter.com/your-handle'
+    gmail: 'mailto:ojashshakya56@gmail.com',
+    github: 'https://github.com/OjashShakya',
+    discord: 'https://discord.com/users/750925675245994006',
+    twitter: 'https://x.com/shakyaojash'
   }
 
-  const connectLink = 'https://www.linkedin.com/in/your-profile'
-  const followLink = 'https://twitter.com/your-handle'
+  const connectLink = 'https://www.linkedin.com/in/ojashshakya/'
+  const followLink = 'https://www.instagram.com/memoirdeojash'
   return (
     <div className="portfolio-container">
       {/* Container 1: Name Tag (Top Left) */}
@@ -42,13 +42,32 @@ function App() {
 
       {/* Container 2: Watch (Top Middle) */}
       <div className="container watch-section">
-        <div className="fill-div">Watch</div>
-        <div className="watch-videos"></div>
+        <div className="section-title">Watch</div>
+        <div className="watch-videos">
+          <iframe
+            className="watch-iframe"
+            src="https://www.youtube.com/embed/fhRHnLwyKHE?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&start=303&loop=1&playlist=fhRHnLwyKHE"
+            title="YouTube Video"
+            frameBorder="0"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
 
-      {/* Container 3: Man by River Image (Top Right) */}
+      {/* Container 3: Picture (Top Right) */}
       <div className="container image-section">
         <img src={pictureImage} alt="Ojash Shakya" className="container-image" />
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(28, 28, 28, 0.15)"
+          }}
+  ></div>
       </div>
 
       {/* Container 4: Connect (Middle Left) */}
@@ -92,7 +111,7 @@ function App() {
 
       {/* Container 6: Projects (Bottom Middle) */}
       <div className="container projects-section">
-        <div className="fill-div">Projects</div>
+        <div className="section-title">Projects</div>
         <div className="projects-container">
             <img
               src={weather}
@@ -110,7 +129,7 @@ function App() {
               src={ojashsdelight}
               alt="Ojash's Delights"
               className="project-image clickable"
-              onClick={() => openInNewTab(projectLinks.ojashsdelight)}
+              // onClick={() => openInNewTab(projectLinks.ojashsdelight)}
             />
         </div>
       </div>

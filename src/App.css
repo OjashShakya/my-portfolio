@@ -23,6 +23,14 @@
   position: absolute;
 }
 
+/* Section title positioned from the top */
+.section-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* Fill div for placeholders */
 .fill-div {
   width: 100%;
@@ -63,14 +71,26 @@
   right: 556px; /* 28px + 500px + 28px */
   height: 550px;
   padding: 25px 20px 20px 20px;
+  justify-content: flex-start; /* align from top */
+  align-items: stretch;
 }
 
 .watch-videos {
+  position: relative;
   width: 768px;
   height: 410px;
-  object-fit: cover;
+  overflow: hidden;
   border-radius: 20px;
-  background-color: aliceblue;
+}
+
+.watch-iframe {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* centers horizontally only */
+  width: 100%;  /* zoom a bit wider to remove side borders */
+  height: 106%; /* fill vertically */
+  border: none;
+  pointer-events: none; /* optional - makes it non-interactive */
 }
 
 /* Container 3: Picture (Top Right) */
@@ -79,6 +99,7 @@
   right: 28px;
   width: 500px;
   height: 350px;
+  overflow: hidden;
 }
 
 .image-section .container-image {
@@ -125,11 +146,14 @@
   width: 808px;
   height: 286px;
   top: 606px; /* 28 + 550(height watch) + 28 */
+  justify-content: flex-start; /* align from top */
+  align-items: stretch;
 }
 
 .projects-container {
   display: flex;
   flex-direction: row;
+  margin-top: 25px;
   gap: 20px;
 }
 
