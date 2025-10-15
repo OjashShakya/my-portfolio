@@ -104,18 +104,19 @@
 
 .watch-videos {
   position: relative;
-  width: 768px;
-  height: 410px;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
   overflow: hidden;
   border-radius: 20px;
 }
 
 .watch-iframe {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%); /* centers horizontally only */
-  width: 100%;  /* zoom a bit wider to remove side borders */
-  height: 106%; /* fill vertically */
+  inset: 0;
+  width: 100%;
+  height: 100%;
   border: none;
   pointer-events: none; /* optional - makes it non-interactive */
 }
@@ -158,6 +159,7 @@
   height: 133px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 20px;
@@ -190,15 +192,17 @@
 }
 
 .projects-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 25px;
   gap: 20px;
 }
 
 .project-image {
-  width: 242.67px;
-  height: 120.3px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 20px;
 }
 
@@ -266,6 +270,9 @@
     left: 306px; /* 28px + 250px + 28px */
     right: 306px; /* 28px + 250px + 28px */
   }
+  .projects-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   
   .image-section, .follow-section {
     right: 28px;
@@ -276,6 +283,8 @@
   .portfolio-container {
     height: auto;
     min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   
   .container {
@@ -291,5 +300,32 @@
   
   .name-tag-section .fill-div {
     font-size: 48px;
+  }
+  .connect-section, .follow-section {
+    padding: 16px;
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .projects-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .social-section {
+    gap: 16px;
+  }
+  .social-section .container-image {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+  .social-section .container-image {
+    width: 64px;
+    height: 64px;
   }
 }
