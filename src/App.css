@@ -104,21 +104,20 @@
 
 .watch-videos {
   position: relative;
-  width: 100%;
-  max-width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
+  width: 768px;
+  height: 432px;
   overflow: hidden;
   border-radius: 20px;
 }
 
 .watch-iframe {
   position: absolute;
-  inset: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  height: 100%;
+  height: 106%;
   border: none;
-  pointer-events: none; /* optional - makes it non-interactive */
+  pointer-events: none; /* prevents clicking */
 }
 
 /* Container 3: Picture (Top Right) */
@@ -194,7 +193,7 @@
 .projects-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 25px;
+  margin-top: 8px;
   gap: 20px;
 }
 
@@ -317,6 +316,25 @@
     width: 72px;
     height: 72px;
     border-radius: 16px;
+  }
+  
+  .watch-videos {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  
+  .watch-iframe {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 106%;
+    border: none;
+    pointer-events: none; /* prevents clicking */
   }
 }
 
